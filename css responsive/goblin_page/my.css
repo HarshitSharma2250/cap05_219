@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
+box-sizing: border-box;
+}
+body{
+    background-image: url('https://t3.ftcdn.net/jpg/04/39/14/48/240_F_439144853_iRFQaGcpIOCi8koAxY2g5ip0AUbRb8fA.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-origin: border-box;
+    height:auto;
+}
+header{
+    width:100%;
+    padding:30px 10%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    
+}
+.menu-icon{
+    display: none;
+}
+#inputbox{
+    display: none;
+}
+
+#navlist{
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    cursor: pointer;
+}
+#navlist>li{
+    margin-left:30px;
+    transition: .3s ease-in-out;
+    height:23px;
+  border-bottom: 1px solid transparent;
+}
+#navlist>li:hover{
+    border-bottom: 1px solid white;
+}
+header .fa{
+    font-size: large;
+    cursor: pointer;
+}
+header>div{
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+}
+main{
+    padding: 50px 18%;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+main>.left_box{
+    color: #fff;
+    margin-top: 50px;
+    margin-right:25px;
+}
+main>.left_box>p:first-child{
+    margin:20px auto;
+    font-size: 12px;
+}
+main>.left_box>p:nth-child(2){
+    margin:20px auto;
+    font-size: 14px;
+}
+
+main>.left_box>.goblin>p:first-child{
+    font-size:48px;
+    margin-right:20px ;
+    margin-bottom: 10px;
+    font-family:Bradley Hand, cursive;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-style: italic;
+}
+main>.left_box>.goblin>p:last-child{
+    font-size: 12px;
+    margin: 20px auto;
+    line-height: 1.4;
+    word-spacing: 2px;
+}
+main>.left_box>.buttons{
+    width:300px;
+}
+main>.left_box>.buttons>.left{
+cursor: pointer;
+background-color: rgb(52, 184, 52);
+padding:6px 6%;
+border-radius: 20px;
+color: #fff;
+transition:.3s ease-in-out;
+border:2px solid rgb(39, 101, 39);
+}
+main>.left_box>.buttons>.left:hover{
+    background-color:transparent;
+    transform: scale(1.1);
+}
+main>.left_box>.buttons>.right{
+    cursor: pointer;
+    margin-left:6px;
+    background-color: transparent;
+    color: #fff;
+    padding: 5px 6%;
+    border-radius:20px;
+    border:2px solid rgb(39, 101, 39);
+    transition:.3s ease-in-out;
+    letter-spacing: 1px;
+}
+main>.left_box>.buttons>.right:hover{
+    transform: scale(1.09);
+}
+main>.left_box>.right>.fa{
+    margin-right: 5px;
+}
+
+main>.right_box>img{
+width: 350px;
+height:400px;
+}
+
+
+@media screen and (max-width:912px) {
+    header{
+        padding:30px 5%; 
+        transition: .5s;
+    }
+}
+@media screen and (max-width:895px) {
+    main{
+        padding: 50px 18% 50px 5%;
+        transition: .5s ease;
+    }
+}
+
+
+@media screen and (max-width:840px) {
+ main>.right_box>img{
+    width:300px;
+    margin-top:20px;
+ }
+ main>.left_box>.goblin>p:first-child{
+    font-size:40px;
+    margin-right:18px ;
+    transition: .5s;
+}
+.menu-icon{
+    display: block;
+}
+
+#navlist{
+    position: fixed;
+    width:auto;
+    height:auto;
+    background:  blue;
+    top: 50px;
+    right: -100%;
+    text-align: center;
+    transition: all .5s;
+    display: flex;
+    flex-direction: column;
+    width: 130px;
+}
+#inputbox:checked ~#navlist{
+    right: 0;
+}
+
+
+#navlist>li{
+    margin:8px auto;
+    width: 70px;
+}
+header>ul .open{
+    right: 0;
+}
+
+}
+
+@media screen and (max-width:750px) {
+    main{
+        padding: 30px 0px 0px 40px;
+        width:100%;
+        display: block;
+        transition: .5s ease;
+    }
+    main>.left_box{
+        width:300px;
+        margin-top: 25px; 
+        
+    }
+    main>.left_box>.goblin>p:first-child{
+        font-size:48px;
+    }
+
+    main>.right_box>img{
+        width:400px;
+        padding-left:30%;
+        margin-top:-20px;
+     }
+}
+
+
+@media screen and (min-width:200px) and (max-width:444px) {
+    head{
+        justify-content:space-between;
+    }
+    main>.right_box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+ 
+    main>.right_box>img{
+        width: 250px;
+        height: 300px;
+        padding-left: 0%;
+        margin: auto;
+    }
+    main{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin-bottom:50px;
+    }
+    /* main>.left_box{
+       margin: auto;   
+    }
+    main>.right_box{
+        width: 100%;
+   display: flex;
+   justify-content: center;
+     } */
+}
