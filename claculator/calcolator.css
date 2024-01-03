@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+#container{
+  margin-left: 30px;
+    text-align: center;
+    margin-top: 10px;
+    border: 2px solid red;
+    width:45%;
+    background: linear-gradient(rgb(255, 255, 81), rgb(83, 83, 255));
+    height: 90vh;
+}
+
+.outer_box{
+    margin: auto;
+    padding-top:20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 900;
+    width: 50%;
+    transform: scaleY(1.6);
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+   margin: 5px 0px 20px 0px;
+   padding-right: 20px;
+   
+}
+.input1,.input2{
+ text-align: end;
+ outline: none;
+ color:rgb(0, 70, 0);
+ height: 5vh;
+}
+span{
+    width: 100px;
+    margin: 5px 0px;
+    margin-right: 50px;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+hr{
+    height: 1vh;
+    background-color: black;
+    margin-bottom: 10px;
+}
+.next{
+    width: 68%;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+grid-template-rows: repeat(1,7vh);
+gap: 0px 20px;
+padding-left: 22px;
+margin-bottom:20px;
+}
+.operator{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(5,7.3vh);
+    width: 20%;
+    gap: 18px ;
+    float: right;
+    transform: translate(-25.9px,-3.35rem);
+}
+.buttons{
+    width: 68%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,7vh);
+    gap: 20px 20px;
+    padding-left: 22px;
+    margin-bottom:20px;
+}
+.next > button:first-child {
+    background-color: red;
+  }
+.operator>button:nth-child(5){
+    background-color: green;
+}
+button{
+    cursor: pointer;
+}
+#history{
+    position: fixed;
+height: 10vh;
+width:70px;
+    border: 1px solid red;
+    left: 49%;
+    top: 10px;
+    margin-left: 20px;
+}
+#myCheckbox{
+    display: none;
+}
+.history{
+    position: absolute;
+    border: 1px solid red;  
+    right: 10px;
+    top: 30px;
+    height: 90vh;
+    width: 250px;
+   overflow-y: scroll;
+   display: none;
+}
+#delete_history{
+    position: absolute;
+top: 27rem;
+right: 2rem;
+z-index:999;
+display: none;
+}
+#myCheckbox:checked~.history{
+    display: block;
+}
+#myCheckbox:checked~#delete_history{
+    display: block;
+}
