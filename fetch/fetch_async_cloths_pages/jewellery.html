@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>electronics page</title>
+    <style>
+        #todilist{
+            height: 30px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 2px solid red;
+        margin-bottom: 50px;
+        background-color: yellow;
+        margin-top: 10px;
+        }
+        a{
+            text-decoration: none;
+            
+        }
+        a:hover{
+            color: red;
+        }
+        #root{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px 20px;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+        .corediv{
+     border: 2px solid black;
+     text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="todilist">
+        <a href="index.html">Home</a>
+        <a href="electronics.html">electronics</a>
+        <a href="jewellery.html">jewellery</a>
+        <a href="men_clothing.html">men's clothing</a>
+        <a href="women_clothing.html">women's clothing</a>
+     </div>
+     <div id="root"></div>
+</body>
+<script>
+    let root = document.getElementById('root')
+    
+    
+    const main = async()=>{
+        try {
+        let res=await fetch(`https://fakestoreapi.com/products/category/jewelery`) ;
+        let data=await res.json();
+        console.log(data)
+    
+    
+         printData(data);
+    
+        }catch(error){
+            console.log(error)
+        }
+    
+    }
+    
+    function printData(data){
+        
+    data.forEach(({image,title,description,price,category}) => {
+        
+        let corediv=document.createElement('div')
+        corediv.className='corediv';
+    
+    let imgelement=document.createElement('img');
+    imgelement.src=image;
+    
+    let titleElement=document.createElement('p')
+    titleElement.textContent=title;
+    
+    let descriptionelement=document.createElement('p')
+    descriptionelement.textContent=description;
+    
+    let priceelement=document.createElement('p')
+    priceelement.textContent=price;
+    
+    let categoryelement=document.createElement('p')
+    categoryelement.textContent=category;
+    
+    
+    corediv.append(
+        imgelement,
+        titleElement,
+        descriptionelement,
+        priceelement,
+        categoryelement,
+        
+    )
+    
+    root.append(corediv)
+    
+    })
+    
+    }
+    
+    main()
+</script>    
+</html>

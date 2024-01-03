@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #root{
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px 5px;
+    }
+    .container{
+        border: 1px solid black;
+    }
+    img{width: 200px;
+    }
+    h1{
+        text-align: center;
+        margin: 10px 0px;
+        text-transform: capitalize;
+    }
+    #search{
+        display: flex;
+        justify-content: flex-end;
+    }
+    #pp{
+        color: red;
+        background-color: yellow;
+    }
+</style>
+<body>
+    <h1>our shop products</h1>
+    <div id="search">
+        <label > serach by category :</label>
+    <input type="text" id="input">
+
+    <select name="items" id="selectItems">
+        <option value=""disabled id="pp">SELECT</option>
+        <option value="jewelery">jewelery</option>
+        <option value="men's clothing">men's clothing</option>
+        <option value="electronics">electronics</option>
+        <option value="women's clothing">women's clothing</option>
+    </select>
+    </div>
+    <div id="root"></div>
+</body>
+<script>
+
+
+
+
+
+  let items=document.getElementById('selectItems')
+    // let input = document.getElementById('input');
+    let root = document.getElementById('root');
+    
+    async function train(searchTerm=''){
+    try {
+        let URL;
+        if(searchTerm !==''){
+         URL=(`https://fakestoreapi.com/products/category/${searchTerm}`);
+        }else{
+            URL=(`https://fakestoreapi.com/products`);
+        }
+        let res=await fetch(URL)
+        if (!res.ok) {
+            throw new Error(`Request failed with status: ${res.status}`);
+        }
+        let data=await res.json();
+        console.log(data)
+            createFunction(data);
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
+function createFunction(data){
+
+    root.innerHTML='';
+    data.forEach(({image,title,description,category})=>{
+        let rootdiv=document.createElement('div')
+        rootdiv.className='container';
+
+        let Posterelement=document.createElement('img')
+        Posterelement.src=image;
+
+        let titleElement=document.createElement('p')
+        titleElement.textContent=title;
+        
+        let TypeElement=document.createElement('p')
+        TypeElement.textContent=category;
+
+        let Yearelement=document.createElement('p')
+        Yearelement.textContent=description;
+
+        rootdiv.append(Posterelement,titleElement,TypeElement,Yearelement)
+
+        root.appendChild(rootdiv)
+    })
+}
+
+
+items.addEventListener('change',()=>{
+train(items.value)
+})
+
+    train()
+
+
+
+   
+</script>
+</html>

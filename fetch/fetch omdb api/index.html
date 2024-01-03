@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width:200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text"  id="searchMovie" placeholder="enter movie name">
+    <button onclick="main()">search movie</button>
+    <div id="root"></div>
+</body>
+<script>
+    let root =document.getElementById('root')
+
+
+async function main(){
+let input=document.getElementById('searchMovie').value
+    let API_KEY='a2f9dc94';
+    let res=await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${input}`)
+    let data = await res.json();
+   printdata(data.Search)
+}
+
+
+function printdata(data){
+    root.innerHTML=''
+    data.forEach(({Poster,Title,imdbID})=> {
+
+let corediv=document.createElement('div')
+
+let imgElement=document.createElement('img')
+imgElement.src=Poster
+
+let titleElement=document.createElement('p')
+titleElement.textContent=Title
+
+let idElement=document.createElement('p')
+idElement.textContent=imdbID;
+
+let button=document.createElement('button')
+button.textContent='click for more details';
+
+
+
+corediv.append(
+    imgElement,
+    titleElement,
+    idElement,
+    button
+)
+button.onclick=function(){
+    localStorage.setItem('movieid',imdbID)
+    location.href='movie.html'
+}
+
+root.appendChild(corediv)
+
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

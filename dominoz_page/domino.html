@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #container{
+        width: 90%;
+        margin: auto;
+        padding: 0px 30px;
+        box-shadow: .5px 3px 5px;
+        padding-bottom: 40px;
+        margin-bottom: 20px;
+      }
+      h1{
+        text-align: center;
+        text-transform: capitalize;
+        color: transparent;
+        background:linear-gradient(red,blue);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+#kk{
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 10vh 60px;
+  margin-bottom: 50px;
+
+}
+.box{
+border: 2px solid red;
+text-align: center;
+cursor: pointer;
+}
+.box.clicked {
+  border: 2px solid green;
+}
+img{
+  width: 17rem;
+  height: 10rem;
+}
+button{
+  width: 100px;
+  height: 7vh;
+  text-transform: capitalize;
+  border: transparent;
+  cursor: pointer;
+  box-shadow:.5px .3px 3px;
+  margin: 5px 0px 5px 30rem;
+}
+button:hover{
+  background-color: rgb(63, 232, 63);
+  border: 1px solid greenyellow;
+}
+#hidden{
+  border: 2px solid yellow;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  background-color: yellow;
+  position: absolute;
+  top: 10rem;
+  right: 28rem;
+text-transform: capitalize;
+display: none;
+}
+#order_number{
+  color: red;
+}
+input{
+  display: none;
+}
+#hiddfailed{
+  border: 2px solid yellow;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  background-color: yellow;
+  position: absolute;
+  top: 10rem;
+  right: 28rem;
+text-transform: capitalize;
+display: none;
+}
+    </style>
+</head>
+<body>
+<div id="container">
+  <h1>domino's pizza </h1>
+  <div id="kk">
+    
+    <input type="checkbox" id="capsicum">
+    <label for="capsicum" class="box"  >
+      <img src="https://media.istockphoto.com/id/1341905666/photo/chinese-food-veg-pizza.jpg?s=612x612&w=0&k=20&c=ZMNxcRhL9uGV8zebXg5wGCh-5GzVBRHsu-lz7Sc06V4=" alt="">
+      <p>capsicum</p>
+      <p>price: 5$</p>
+    </label>
+
+    <input type="checkbox" id="cheej">
+    <label for="cheej" class="box">
+      <img src="https://media.istockphoto.com/id/905492462/photo/pizza-margarita-with-mozzarella-cheese-basil-and-tomato-template-for-your-design-and-menu-of.jpg?s=612x612&w=0&k=20&c=J4L7If3oJp0IrZ5IXEc-_r0WU0HNa7U5Yn4IW7ynuVo=" alt="">
+      <p>cheej</p>
+      <p>price: 3.5$</p>
+    </label>
+
+    <input type="checkbox" id="family">
+    <label for="family" class="box">
+      <img src="https://media.istockphoto.com/id/1297246932/photo/different-tipes-of-pizza.jpg?s=612x612&w=0&k=20&c=SZXZlnirJNXl_0nrr8CbvJuZ_csHGXCEdVA9a5Kow1c=" alt="">
+      <p>family pack</p>
+      <p>price: 13$</p>
+    </label>
+
+  </div>
+</div>
+
+
+<button id="order_btn"> order food</button>
+
+<div id="hidden">
+  <h3>order completed</h3>
+  <p>your order Id is : <span id="order_number">12345</span></p>
+</div>
+<div id="hiddfailed">
+<p>you do not have enought balance in your account!</p>
+</div>
+</body>
+<script src="doomino.js"></script>
+</html>

@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "name": "harshit",
+      "stats": false,
+      "id": 1
+    },
+    {
+      "name": "e",
+      "stats": true,
+      "id": 2
+    }
+  ]
+}

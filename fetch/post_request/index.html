@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="email" id="email">
+    <input type="password" id="password">
+    <button onclick="main()">click</button>
+    <div id="root"></div>
+
+</body>
+<script>
+ let root =document.getElementById('root')
+
+
+const main=async ()=>{
+    try {
+let getemail=document.getElementById('email').value
+let getpassword=document.getElementById('password').value
+
+        let userdetail={
+            emailid:getemail,
+            password:getpassword
+        }
+        let URL='https://reqres.in/api/login';
+    let res = await fetch(URL,{
+        method:'POST',
+        headers:{'Content-type':"application/json"},
+        body:JSON.stringify(userdetail)
+
+    });
+    let data=await res.json();
+
+console.log(data);
+
+    } catch (error) {
+        console.log(error)
+    }
+   
+
+}
+
+// async function yahoo(){
+
+//     let res = await fetch('https://reqres.in/api/login');
+
+//     let data=await res.json();
+
+//     createdata(data)
+
+
+// }
+
+// function createdata(data){
+//     let corediv=document.createElement('div');
+
+// }
+
+// yahoo()
+
+
+
+
+
+
+
+</script>
+</html>

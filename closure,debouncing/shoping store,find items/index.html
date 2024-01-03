@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    img{
+        width: 345px;
+        height: 300px;
+    }
+    #root{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px 5px;
+ margin-top: 40px;
+    }
+    .container{
+        border: 2px solid black;
+        text-align: center;
+    }
+    #search{
+       
+        padding:10px 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+       
+    }
+    #search>#searchIteams{
+        display: flex;
+        flex-direction: column;
+    
+    }
+    h1{
+        text-align: center;
+        margin-top: 10px;
+    }
+
+</style>
+<body>
+
+    <h1>Labeny Mall </h1>
+    <div id="search">
+        <label >search items : </label>
+        <select name="items" id="searchIteams">
+            <option value="" hidden>Items List</option>
+        </select>
+    
+    </div>
+    <div id="root"></div>
+</body>
+<script>
+    // let API_KEY='a2f9dc94';
+    let input=document.getElementById('input');
+    let root=document.getElementById('root')
+    let selectItems=document.getElementById('searchIteams')
+
+let arr=["smartphones","laptops","fragrances","skincare","groceries","home-decoration","furniture","tops","womens-dresses","womens-shoes","mens-shirts","mens-shoes","mens-watches","womens-watches","womens-bags","womens-jewellery","sunglasses","automotive","motorcycle","lighting"]
+arr.forEach((ele)=>{
+    let option = document.createElement('option');
+    option.value=ele;
+    option.text=ele;
+    selectItems.append(option)
+})
+
+
+async function apiRequest(search=''){
+try {
+    let URL;
+    if(search!==''){
+        URL=`https://dummyjson.com/products/category/${search}`;
+    }else{
+        URL=`https://dummyjson.com/products`;
+    }
+    let res=await fetch(URL)
+    let data=await res.json();
+    createElement(data)
+} catch (error) {
+    console.log(error)
+}
+}
+
+function createElement(data){
+
+let result=data.products
+
+    root.innerHTML='';
+    if(Array.isArray(result)){
+        result.forEach(({title,description,price,stock,brand,images})=>{
+
+            let rootel=document.createElement('div')
+rootel.className='container'
+let imgEl=document.createElement('img')
+imgEl.src=images[0];
+
+            let titleEl=document.createElement('p')
+            titleEl.textContent='TITLE : '+title;
+
+            let descriptionEl=document.createElement('p')
+            descriptionEl.textContent='DISCRIPTION : '+description;
+
+            let priceEl=document.createElement('p');
+            priceEl.textContent='PRICE : '+price;
+
+            let stockEl=document.createElement('p')
+            stockEl.textContent='STOCK : '+stock;
+
+            let brandEl=document.createElement('p')
+            brandEl.textContent='BRAND : '+brand;
+
+rootel.append(imgEl,titleEl,descriptionEl,priceEl,stockEl,brandEl)
+
+root.appendChild(rootel)
+
+        })
+    }
+}
+
+
+
+
+let pp;
+function debounce(func){
+    function closure(exp){
+        clearTimeout(pp);
+        pp=setTimeout(()=>{
+    func(exp);
+        },1000)
+    }
+    return closure;
+}
+
+let dd=debounce(apiRequest)
+
+selectItems.addEventListener('change',()=>{
+    dd(selectItems.value);
+})
+apiRequest();
+
+
+
+
+
+
+
+</script>
+</html>

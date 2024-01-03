@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  .container{
+    text-align: center;
+  }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script type="text/babel">
+
+ let root=document.getElementById('root')
+     let obj={ 
+        img:'https://img.freepik.com/free-vector/head-man_1308-33466.jpg?size=626&ext=jpg',
+        name:'harshit kumar sharma',
+       
+     }
+
+let styleRounded={
+    width: '170px ',
+    height: '170px',
+    borderRadius:'50%',
+    border:'2px solid black',
+    padding:'5px',
+    
+}
+let styleNotRounded={
+    width: '170px ',
+    height: '170px',
+    borderRadius:'1rem',
+    border:'2px solid black'
+}
+
+
+
+function Avatar(prop){
+    return <div className='container'>
+        <img  src={prop.obj.img} style={prop.isRounded?styleRounded : styleNotRounded} />
+       {prop.hideName ? null :<p>{prop.obj.name}</p> }
+        </div>
+}
+
+function Main(){
+    return <div>
+ <Avatar obj={obj}
+ isRounded={false}
+ hideName={true}
+ />
+
+        </div>
+}
+
+
+ReactDOM.createRoot(root).render(<Main/>)
+    </script>
+</html>
