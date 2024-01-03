@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upi page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+    *{
+        padding:0;
+        margin: 0;
+        box-sizing: border-box;
+        text-transform: capitalize;
+    }
+    #container{
+        border: 2px solid red;
+        width:430px;
+        height: 140vh;
+        margin: auto;
+        /* display: none; */
+    }
+    h2{
+        text-align: center;
+        background-color: transparent;
+        color: transparent;
+    background: linear-gradient(45deg, red, blue);
+    background-clip: text;
+    -webkit-background-clip: text;
+    }
+    .sendMOney{
+        margin-top: 20px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+width: 37%;
+padding-left: 20px;
+margin-bottom: 10px;
+    }
+.sendMOney p{
+    color: rgb(73, 73, 152);
+    font-weight: 600;
+    font-size: 20px;
+}
+.nameBox{
+    background-color: rgba(211, 205, 198, 0.34);
+    height: 20vh;
+    padding-top: 10px;
+    padding-left: 18px;
+}
+#name{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 53%;
+}
+.nameBox>#name>.nickName{
+    margin-top: 25px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+    width: 45px;
+    height: 8vh;
+    border-radius: 50%;
+    text-transform: uppercase;
+    background-color: rgb(4, 103, 4);
+    color: #fff;
+    word-spacing:11px;
+    font-size: 20px;
+    transform: translate(0px ,-10px);
+}
+.person_name{
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.person_id{
+    font-size: 12px;
+    font-weight: 550;
+}
+.person_id>.fas{
+    margin-right: 5px;
+   
+}
+.amount{
+    margin-top: 20px;
+   
+}
+.amount>.amount_content{
+    display: flex;
+    justify-content:space-between;
+    width: 94%;
+    margin: auto;
+    margin-bottom: 5px;
+}
+.amount_content>p:first-child{
+    font-weight: 600;
+}
+.amount_content>p:nth-child(2){
+    font-size: 13px;
+    opacity: .7;
+  
+}
+#enter_amount{
+    width: 94%;
+    margin: auto;
+    display:block;
+    height: 8vh;
+    padding-left: 5px;
+    font-size: 22px;
+   border: 1px solid black;
+   display: flex;
+   align-items: center;
+}
+#enter_amount>input{
+    margin-left: 5px;
+outline: none;
+border: none;
+font-size: 15px;
+width: 100%;
+}
+.account{
+    margin-left: 13px;
+    margin-top: 20px;
+  
+  
+}
+.account>p{
+    margin-bottom: 5px;
+    margin-left: 3px;
+    font-weight: 550;
+}
+#sbi{
+    display: flex;
+    align-items: center;
+    width:97%;
+    margin: auto;
+    transform: translate(-5px,0px);
+    height: 14vh;
+    border: 2px solid black;
+padding-left: 10px;
+cursor: pointer;
+}
+
+#sbi>img{
+    width: 50px;
+    height:9vh;
+    margin-right: 10px;
+}
+#sbi>.fas{
+margin-left:40%;
+
+}
+#sb .bank_name{
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+ .bank_name p:first-child{
+    margin-bottom: 7px;
+}
+#remark{
+    margin-top: 15px;
+}
+#remark>.remark_content{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+}
+.remark_content>p:first-child{
+    font-weight: 700;
+}
+.remark_content>p:nth-child(2){
+    font-size: 14px;
+    opacity: .7;
+}
+#remark>input{
+    margin:auto;
+    margin-top:5px;
+    width: 95%;
+    height: 7vh;
+    display: block;
+}
+.addtofavourite{
+    margin-top: 25px;
+    margin-left: 13px;
+}
+.upi_logo{
+    margin-top: 3rem;
+    margin-left: 10rem;
+}
+.upi_logo>img{
+    margin-top: 3px;
+    width:100px;
+    height: 8vh;
+    transform: translate(-9px ,0px);
+}
+.buttons{
+    margin-left:7rem;
+    margin-top: 2rem;
+}
+.back_button{
+    width: 90px;
+    height: 6vh;
+    cursor: pointer;
+}
+.send_button{
+    margin-left: 20px;
+    width: 90px;
+    height: 6vh;
+    opacity: 1;
+  
+}
+.alert{
+top: 124vh;
+    width:44.5%;
+    position: absolute;
+    padding-top: 8px;
+    text-align: center;
+    background-color: rgb(170, 0, 0);
+    color: #fff;
+    margin-top: 20px;
+    margin-left: 1px;
+height: 12vh;
+display: none;
+}
+
+
+
+
+#password_page{
+    border: 2px solid red;
+        width: 45%;
+        height: 99vh;
+        margin: auto;
+        display: none;
+}
+#password_page .box>img{
+width: 80px;
+height: 5vh;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+    margin-top: 10px;
+}
+header>.box1>p:nth-child(2){
+    font-weight: 900;
+}
+.toSendingInfo{
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(167, 170, 173, 0.29);
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 15px;
+}
+.toSendingInfo>.box1>p:first-child{
+    margin-bottom: 2px;
+}
+.toSendingInfo>.box>p:first-child{
+    margin-bottom: 2px;
+    font-weight: 900;
+}
+.pin{
+    margin-top: 35px;
+    font-family: sans-serif;
+    text-align: center;
+}
+.pin>p{
+    text-transform:uppercase;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+#pin-input>input{
+    text-align: center;
+width:50px;
+border-top: none;
+border-left: none;
+border-right: none;
+outline: none;
+font-size: 30px;
+margin: 0px 5px;
+}
+#pin-input>input::-webkit-inner-spin-button,
+#pin-input>input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0;
+ }
+ .money_popup{
+     margin: auto;
+    margin-top: 100px;
+    display: flex;
+    justify-content:space-between;
+    width: 18rem;
+    background-color: rgba(255, 222, 121, 0.758);
+    padding: 5px 8px;
+   border-radius: 25px;
+ }
+.money_popup>.sign{
+    width: 30px;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color:orange;
+    font-size: 25px;
+    border-radius: 50%;
+    transform: translate(0px,2px);
+}
+#button_after{
+    margin-top: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#after_pin{
+    width: 100px;
+    height: 5vh;
+    opacity: .5;
+}
+</style>
+</head>
+<body>
+    
+    <div id="container">
+        <h2>upi payment page</h2>
+        <div class="sendMOney">
+           <p><i class="fas fa-arrow-left"></i></p>
+            <p>send money</p>
+        </div>
+<div class="nameBox">
+    <p>sending money to</p>
+    <div id="name"> 
+        <p class="nickName"> up</p>
+      <div id="upi_id">
+        <p class="person_name"> unknown person</p>
+        <p class="person_id"><i class="fas fa-credit-card"></i>unknownperson77@oksbi</p>
+      </div>
+     </div>
+</div>
+<div class="amount">
+    <div class="amount_content">
+        <p>amount</p>
+         <p>min ₹1</p>
+        </div>
+        <div id="enter_amount">₹ <input type="number" id="input" placeholder="00.00" required></div>
+       
+</div>
+<div class="account">
+    <p>Debit account</p>
+    <div  id="sbi">
+            <img src="https://www.freepnglogos.com/uploads/sbi-logo-png/sbi-logo-vectors-download-26.png" alt="">
+            <div class="bank_name">
+                <p>state bank of india</p>
+                <p>XXXXXXXX7503</p>
+            </div>
+            <i class="fas fa-chevron-down"></i>
+    </div>
+</div>
+
+<div id="remark">
+    <div class="remark_content">
+        <p>remarks</p>
+        <p>(optional)</p>
+    </div>
+    <input type="text">
+</div>
+
+<div class="addtofavourite">
+    <p><i class="fas fa-star"></i>add to favourites</p>
+</div>
+<div class="upi_logo">
+    <p>powerd by </p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/695px-UPI-Logo-vector.svg.png" alt="">
+</div>
+
+<div class="buttons">
+    <button class="back_button">back</button>
+    <button class="send_button">send</button>
+</div>
+<div class="alert">
+    pamount should less then 100000
+</div>
+    </div>
+
+
+
+<div id="password_page">
+<header>
+    <div class="box1">
+        <p>state bank of india</p>
+        <p>XXXX7503</p>
+    </div>
+    <div class="box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/695px-UPI-Logo-vector.svg.png" alt="">
+    </div>
+</header>
+<div class="toSendingInfo">
+    <div class="box1">
+        <p>to:</p>
+        <p>sending:</p>
+    </div>
+    <div class="box">
+        <p>Unknown per...</p>
+        <p>₹ <span class="amount_selected">000</span></p>
+    </div>
+</div>
+
+<div class="pin">
+    <p>enter 6-Digit upi pin</p>
+    <div id="pin-input">
+        <input type="password" maxlength="1" id="digit1" required>
+        <input type="password" maxlength="1" id="digit2" required>
+        <input type="password" maxlength="1" id="digit3" required>
+        <input type="password" maxlength="1" id="digit4" required>
+        <input type="password" maxlength="1" id="digit5" required>
+        <input type="password" maxlength="1" id="digit6" required>
+    </div>
+</div>
+
+<div class="money_popup">
+   <div class="sign">!</div>
+   <div class="box">
+    <p>you are sending ₹ <span class="amount_selected">000</span> from</p>
+    <p>your account to unknown person</p>
+   </div>
+</div>
+<div id="button_after"><button id="after_pin">submit</button></div>
+</div>
+
+<div class="moneyFailedPage">
+
+</div>
+
+</body>
+<script src="upi.js"></script>
+</html>

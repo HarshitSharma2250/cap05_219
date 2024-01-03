@@ -1,0 +1,14 @@
+ol>li{
+    margin: 10px;
+    border: 2px solid black;
+    list-style-position: inside;
+    height: 20vh;
+    width: 35%;
+    padding-left: 10px;
+}
+li>div{
+   display: flex;
+   justify-content:space-evenly ;
+   align-items: center;
+    
+}

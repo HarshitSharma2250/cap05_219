@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-transform: capitalize;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    margin-top: 3rem;
+display: flex;
+justify-content:space-around;
+border: 2px solid  rgba(243, 227, 227, 0.125);
+padding: 2rem  0%;
+background-color: rgb(243, 247, 251);
+}
+
+.information{
+    transform: translate(0px,2px);
+display: flex;
+flex-direction: column;
+width: 60%;
+}
+.container>.information>.name{
+    font-size: 24px;
+    font-weight: 550;
+}
+.information>.name>button{
+    margin-left: 20px;
+    padding: 2px 20px;
+    background-color: black;
+    color: #fff;
+    text-transform: capitalize;
+    border-radius: 5px;
+}
+.information>.title{
+    margin-top: 6px;
+    font-size: 18px;
+   
+}
+.information>.icons{
+    margin-top: 40px;
+   display: flex;
+   flex-wrap: wrap;
+  
+}
+.information>.icons>span{
+   margin: 5px 0px;
+   margin-right: 20px;
+    border: 1px solid rgb(207, 207, 187);
+    padding: 5px 15px;
+    border-radius:20px;
+
+}
+.information>.icons>span>.html{
+    color:skyblue;
+    margin-right: 5px;
+}
+.information>.icons>span>.css{
+    color: chartreuse;
+    margin-right: 5px;
+}
+.information>.icons>span>.js{
+
+    margin-right: 5px;
+    color: rgb(242, 19, 134);
+
+}
+.information>.icons>span>.node{
+    color:rgb(10, 245, 167);
+    margin-right: 5px;
+}
+.information>.icons>span>.react{
+    color:rgb(234, 255, 0);
+    margin-right: 5px;
+}
+
+.pics{
+    background: linear-gradient(yellow,yellow);
+width: 205px;
+height: 205px;
+border-radius: 50%;
+display: flex;
+justify-content: center;
+align-items: center;
+border:2px solid red;
+}
+.pics>img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
